@@ -1,5 +1,7 @@
 # Planetbana
 from math import *
+import math
+from time import *
 from turtle import *
 
 # Konstanter
@@ -59,8 +61,8 @@ def planet(vx=1.0):
       y=y+vy*dt
       r=sqrt(x*x+y*y)
       t=t+dt
-      # Ta bort raden under om den ger undantag.
-      setheading(degrees(atan2(vy,vx)))
+      setheading(math.degrees(atan2(-y,-x)))
+      sleep(0.02)
   except:
     print("r=%.3f, t=%.3f."%(r,t))
     vx=float(input("v0? "))
